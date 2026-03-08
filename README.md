@@ -45,7 +45,7 @@ requirements.txt
 ### 1 Clone repository
 
 ```
-git clone https://github.com/your-username/django-ecommerce.git
+git clone https://github.com/yuvasri200/E-commerce-Website-.git
 ```
 
 ### 2 Navigate to project
