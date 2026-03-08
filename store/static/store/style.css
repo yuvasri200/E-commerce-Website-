@@ -1,0 +1,136 @@
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: linear-gradient(to right, #ffe6e6, #e6f7ff);
+}
+
+/* Page title */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3333cc;
+    text-shadow: 1px 1px #ffffff;
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 15px;
+    background-color: #ffcc66;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.categories a.active,
+.categories a:hover {
+    background-color: #ff9933;
+    color: white;
+}
+
+/* Products grid */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Individual product box */
+.product {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Product name */
+.product h3 {
+    color: #3333cc;
+    margin: 10px 0;
+}
+
+/* Price */
+.product p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Add to Cart button */
+.add-to-cart {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+/* Login/Register form */
+form {
+    width: 300px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3333cc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #000099;
+}

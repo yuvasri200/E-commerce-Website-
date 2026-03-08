@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My E-Commerce Store</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
+</head>
+
+<body>
+
+<h1>All Products</h1>
+
+<!-- Categories -->
+<div class="categories">
+    <a href="{% url 'all_products' %}" {% if not selected_category %}class="active"{% endif %}>All Products</a>
+    {% for category in categories %}
+        <a href="{% url 'category_products' category.id %}" {% if selected_category == category %}class="active"{% endif %}>{{ category.name }}</a>
+    {% endfor %}
+</div>
+
+<!-- Products -->
+<div class="products-container">
+    {% for product in products %}
+    <div class="product">
+        <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" style="width:200px; height:200px; object-fit:cover;">
+            <h3>{{ product.name }}</h3>
+        </a>
+        <p>Price: ₹{{ product.price }}</p>
+        <p>{{ product.description }}</p>
+
+        <!-- Add to Cart (direct link version) -->
+        <a href="{% url 'add_to_cart' product.id %}">
+            <button class="add-to-cart">Add to Cart</button>
+        </a>
+    </div>
+    {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

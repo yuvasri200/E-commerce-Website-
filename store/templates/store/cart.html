@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+<body>
+<h1>Your Cart</h1>
+<table border="1" cellpadding="10">
+<tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th>Action</th>
+</tr>
+{% for product in products %}
+<tr>
+    <td>{{ product.name }}</td>
+    <td>₹{{ product.price }}</td>
+    <td>
+        <form action="{% url 'update_cart' product.id %}" method="POST">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="{{ product.qty }}" min="1">
+            <button type="submit">Update</button>
+        </form>
+    </td>
+    <td>₹{{ product.total_price }}</td>
+    <td>
+        <a href="{% url 'remove_from_cart' product.id %}">Remove</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+<p>Total: ₹{{ total }}</p>
+<a href="{% url 'checkout' %}"><button>Checkout</button></a>
+<a href="{% url 'all_products' %}"><button>Continue Shopping</button></a>
+</body>
+</html>
